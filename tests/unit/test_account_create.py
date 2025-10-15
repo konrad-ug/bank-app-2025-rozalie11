@@ -8,3 +8,7 @@ class TestAccount:
         assert account.last_name == "Doe"
         assert account.balance == 0.0
         assert account.pesel == "03101020108"
+
+    def test_pesel_empty(self):
+        account = Account("Bob", "Brown", "")
+        assert account.pesel == "Invalid"
