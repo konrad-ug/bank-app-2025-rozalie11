@@ -2,11 +2,11 @@
 # Bank-app
 
 ## Author:
-name:
+name: Klaudia
 
-surname:
+surname: Kucner
 
-group:
+group: 2 (ale chodze na zajecia z 4)
 
 ## How to start the app
 
