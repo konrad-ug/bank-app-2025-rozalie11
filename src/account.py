@@ -34,3 +34,23 @@ class Account:
         elif 21 <= month <= 32:
             year += 2000
         return year
+    
+    def receiveMoneyTransfer(self, amount):
+        if not isinstance(amount, (int, float)):
+            return
+        if amount<=0:
+            return
+        else:
+            self.balance += amount
+
+    def sendMoneyTransfer(self, amount, receiverPESEL):
+        if not isinstance(amount, (int, float)):
+            return
+        if amount <= 0:
+            return
+        elif amount > self.balance:
+            return
+        elif not self.is_pesel_valid(receiverPESEL):
+            return
+        else:
+            self.balance -= amount
