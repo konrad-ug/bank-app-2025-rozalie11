@@ -49,4 +49,4 @@ class TestMoneyTransfer:
         account.sendMoneyTransfer("kotek", "39976450101")
         assert account.balance == 50.0
 
-    #feature 7
+    #feature 7 w osobnym pliku
