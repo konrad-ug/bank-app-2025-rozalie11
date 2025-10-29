@@ -62,6 +62,11 @@ class TestPersonalAccount:
         assert account.balance == 50.0
         assert account.promotion_code == "PROM_XYZ"
 
+    def test_prom_after_1960_inv_pesel(self): #prawidlowy kod i rok ur > 1960 aly pesel
+        account = PersonalAccount("Dylan", "Wang", "660102010", promotion_code = "PROM_XYZ")
+        assert account.balance == 0.0
+        assert account.promotion_code == "PROM_XYZ"
+
     def test_prom_after_1960_inv_code(self): #nieprawidlowy kod i rok ur > 1960
         account = PersonalAccount("Dylan", "Wang", "66010201023", promotion_code = "POM_XYZ")
         assert account.balance == 0.0
