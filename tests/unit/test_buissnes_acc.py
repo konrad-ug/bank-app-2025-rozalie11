@@ -18,11 +18,5 @@ class TestBuissnessAccount:
     def testSendTransferSuccess(self):
         account = BuissnesAccount("iIndustry", "0235618769")
         account.receiveMoneyTransfer(100)
-        account.sendMoneyTransfer(50, "6211654321")
+        account.sendMoneyTransfer(50)
         assert account.balance == 50.0
-
-    def testSendTransferInvalidNIP(self):
-        account = BuissnesAccount("iIndustry", "0235618769")
-        account.receiveMoneyTransfer(100)
-        account.sendMoneyTransfer(50, "654321")
-        assert account.balance == 100.0
