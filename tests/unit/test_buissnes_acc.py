@@ -15,6 +15,11 @@ class TestBuissnessAccount:
         account.receiveMoneyTransfer(100)
         assert account.balance == 100.0
 
+    def testReceiveTransfer(self):
+        account = BuissnesAccount("iIndustry", "0235618769")
+        account.receiveMoneyTransfer(-100)
+        assert account.balance == 0.0
+
     def testSendTransferSuccess(self):
         account = BuissnesAccount("iIndustry", "0235618769")
         account.receiveMoneyTransfer(100)
