@@ -37,4 +37,22 @@ class PersonalAccount(Account):
             year += 2000
         return year
     
+    def submit_for_loan(self, amount):
+        if len(self.history) >= 3:
+            last_three = self.history[-3:] 
+            only_positive = True  
+
+            for transaction in last_three:
+                if transaction <= 0:
+                    only_positive = False
+                    break 
+
+            if only_positive:
+                self.balance += amount
+                return True
+
+        if len(self.history) >= 5 and sum(self.history[-5:]) > amount:
+            self.balance += amount
+            return True
+        return False
     
