@@ -10,4 +10,14 @@ class BuissnesAccount(Account):
             return True
         return False
     
+    def take_loan(self, amount):
+        if -1775 not in self.history:
+            return False
+
+        if self.balance < amount * 2:
+            return False
+        
+        self.balance += amount
+        return True
+    
     
